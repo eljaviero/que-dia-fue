@@ -1,0 +1,99 @@
+<html>
+<!-- version twig -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Que día de la semana fue el...</title>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Utilidad para saber que día de la semana fue un día dado" />
+<meta name="keywords" content="Que día fue, Que día era, En que cayó el día" />
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"><!-- Optional theme -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script><!-- Latest compiled and minified JavaScript -->
+
+<link rel="stylesheet" href="/css/base.css" />
+
+<!-- analytics -->
+{{ analytics | raw }}
+<!-- fin analytics -->
+</head>
+
+<body>
+<div class="container">
+
+    <h1><a href="{{ self_url }}">Que día de la semana fue el...</a></h1>        
+ 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            
+            <form class="form-horizontal" method="POST">
+
+              <div class="form-group">
+                  <div class="col-sm-offset-1 col-sm-11">
+                    {{ mensaje | raw }}   
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label for="dia" class="col-sm-2 control-label">Dia:</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" name="dia" id="dia" placeholder="{{hoy.mday}}">        
+                </div>
+
+                <label for="mes" class="col-sm-2 control-label">Mes:</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" name="mes" id="mes" placeholder="{{hoy.mon}}">        
+                </div>
+
+                <label for="anho" class="col-sm-2 control-label">Año:</label>
+                <div class="col-sm-2">
+                <input type="text" class="form-control" name="anho" id="anho" placeholder="{{hoy.year}}">        
+                </div>        
+              </div>      
+
+              <div class="form-group">        
+                  <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-resize-small" aria-hidden="true"></span>           
+                        &nbsp;Calcular día de la semana</button>        
+              </div>      
+
+              <input name="submit_dia" value="on" type="hidden" />
+
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div id="enlaces_sociales">
+    <a href="https://www.facebook.com/javi.cal"><img src="http://eljaviero.com/img/social/facebook.png" border="0" title=""></a>
+    <a href="https://twitter.com/el_javiero" style="margin: 0 3px;"><img src="http://eljaviero.com/img/social/twitter.png" border="0" title=""></a>
+    <a href="https://plus.google.com/u/0/116206714483461939252/posts"><img src="http://eljaviero.com/img/social/google-plus.png" border="0" title=""></a>
+</div>
+
+<div id="pie">
+    <a target="_blank" href="/about">quien soy</a> ·
+    <a href="http://eljaviero.com/descargarvideosdelasexta/" style="color:#008000;">descargar videos de la tele y youtube</a> ·
+    <a href="http://eljaviero.com/stocknexus/" style="color: #07D9F8;">comprobar stock nexus 6</a> ·
+    <a href="/">el javiero</a> {{ "now" | date("Y") }} ©
+</div>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+    });
+});
+</script>
+
+</body>
+</html>
