@@ -38,25 +38,19 @@
             <form class="form-horizontal" method="POST">
 
               <div class="form-group">
-                  <div class="col-sm-offset-1 col-sm-11">
-                    {{ mensaje | raw }}   
-                  </div>
-              </div>
-
-              <div class="form-group">
                 <label for="dia" class="col-sm-2 control-label">Dia:</label>
                 <div class="col-sm-2">
-                <input type="text" class="form-control" name="dia" id="dia" placeholder="{{hoy.mday}}">        
+                <input type="text" class="form-control" name="dia" id="dia" value="{{dia.mday}}">        
                 </div>
 
                 <label for="mes" class="col-sm-2 control-label">Mes:</label>
                 <div class="col-sm-2">
-                <input type="text" class="form-control" name="mes" id="mes" placeholder="{{hoy.mon}}">        
+                <input type="text" class="form-control" name="mes" id="mes" value="{{dia.mon}}">        
                 </div>
 
                 <label for="anho" class="col-sm-2 control-label">Año:</label>
                 <div class="col-sm-2">
-                <input type="text" class="form-control" name="anho" id="anho" placeholder="{{hoy.year}}">        
+                <input type="text" class="form-control" name="anho" id="anho" value="{{dia.year}}">        
                 </div>        
               </div>      
 
@@ -69,6 +63,10 @@
               <input name="submit_dia" value="on" type="hidden" />
 
             </form>
+
+            <div class="resultado">
+                El día {{ dia.mday }}/{{ dia.mon }}/{{ dia.year }} fue un <strong>{{ diaDeLaSemana }}</strong>
+            </div>
 
         </div>
     </div>
@@ -85,7 +83,7 @@
 <div id="pie">
     <a target="_blank" href="/about">quien soy</a> ·
     <a href="http://eljaviero.com/descargarvideosdelasexta/" style="color:#008000;">descargar videos de la tele y youtube</a> ·
-    <a href="http://eljaviero.com/stocknexus/" style="color: #07D9F8;">comprobar stock nexus 6</a> ·
+    <a href="http://eljaviero.com/sugerenciasdegoogle/" style="color: #07D9F8;">sugerencias de google</a> ·
     <a href="/">el javiero</a> {{ "now" | date("Y") }} ©
 </div>
 
